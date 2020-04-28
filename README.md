@@ -1,5 +1,5 @@
 # File-converter
-A script that converts between .txt, .pdf and .wav files
+A script that converts .txt files to .pdf and .wav files
 
 # Requirements
 python==3.x

@@ -6,7 +6,7 @@ from gtts import gTTS
 
 class Convert:
 	"""
-	To conver file between .txt(text files) to .pdf(pdf 
+	To convert file between .txt(text files) to .pdf(pdf 
 	files) and .wav(audio files). The conversion to .wav
 	is an idea for making audiobooks
 	"""
