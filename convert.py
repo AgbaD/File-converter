@@ -1,5 +1,7 @@
+import os
 from fpdf import FPDF
 import PyPDF2
+from gtts import gTTS
 
 class Convert:
 	"""
@@ -22,9 +24,9 @@ class Convert:
 		try:
 			f_t = [i for i in file_name.split('.')]
 		except:
-			pass
-			# to work on adding file extensions
-			# another seperate project to be imported
+			print("Invalid File Name1")
+			return
+			
 		file_type = f_t[1]
 		self.name = f_t[0]
 
@@ -62,8 +64,22 @@ class Convert:
 			print("Invalid file type!")
 			print("Can only convert between .txt, .pdf & .wav")
 
+	# There is an issue here
 	def pdf_to_text(self):
-		pass
+		pdf_file = open(self.file, 'rb')
+		pdf_reader = PyPDF2.PdfFileReader(pdf_file)
+		n = pdf_reader.getNumPages()
+		text = ''
+		for i in range(n):
+			pg = pdf_reader.getPage(x-1)
+			text += pg.extractText()
+
+		file_name = '{0}.txt'.forman(self.name)
+		path = os.getcwd()
+		file_path = os.path.join(path, file_name)
+		with open(file_path, 'a') as f:
+			f.writelines(text)
+		pdf_file.close()
 
 	def text_to_pdf(self):
 		pdf = FPDF()
@@ -76,9 +92,12 @@ class Convert:
 			pdf.cell(200, 10, txt=line, ln=num, align='C')
 			num += 1
 
-		pdf.output(self.name'.pdf')
+		pdf.output('{0}.pdf'.format(self.name))
 
-	def to_wav(self):
-		pass
+	def text_to_wav(self):
+		with open(self.file) as f:
+			txt = f.read()
 
+		audio = gTTS(text=txt, lang='en', slow=Fasle)
+		audio.save("{0}.wav".format(self.name))
 
