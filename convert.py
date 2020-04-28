@@ -47,3 +47,4 @@ class Convert:
 		audio = gTTS(text=txt, lang='en', slow=Fasle)
 		audio.save("{0}.wav".format(self.name))
 
+
