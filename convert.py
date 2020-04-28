@@ -26,7 +26,7 @@ class Convert:
 		except:
 			print("Invalid File Name1")
 			return
-			
+
 		file_type = f_t[1]
 		self.name = f_t[0]
 
@@ -51,15 +51,7 @@ class Convert:
 				print("Invalid command!")
 				self.first_thing()
 		elif file_type == 'wav':
-			print("File to be converted to .pdf[0] or .txt[1]")
-			command = int(input("Enter digit for file type conversion: \n"))
-			if command == 0:
-				self.wav_to_pdf()
-			elif command = 1:
-				self.wav_to_text()
-			else:
-				print("Invalid command!")
-				self.first_thing()
+			print("Cannot convert fromwav :( ")
 		else:
 			print("Invalid file type!")
 			print("Can only convert between .txt, .pdf & .wav")
@@ -80,6 +72,11 @@ class Convert:
 		with open(file_path, 'a') as f:
 			f.writelines(text)
 		pdf_file.close()
+
+	def pdf_to_wav(self):
+		# call pdf_to_text
+		# then call text_to_wav
+		pass
 
 	def text_to_pdf(self):
 		pdf = FPDF()
