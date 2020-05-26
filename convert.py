@@ -48,3 +48,6 @@ class Convert:
 		audio.save("{0}.wav".format(self.name))
 
 
+if __name__ == '__main__':
+    Convert()
+

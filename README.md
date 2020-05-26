@@ -1,15 +1,28 @@
 # File-converter
 A script that converts .txt files to .pdf and .wav files
 
-# Requirements
-python==3.x
+# [Requirements](requirements.txt)
 
-fpdf==1.7.2
+# Usage
+1. Clone the repo
+```sh
+git clone https://github.com/BlankGodd/File-converter.git
+```
 
-gTTS==2.0.4
+```sh
+cd File-converter
+```
 
-gTTS-token==1.1.3
+2. [Setup virtual enviroment](https://realpython.com/python-virtual-environments-a-primer/)
 
-PyPDF2==1.26.0
+3. Install the dependencies
+```sh
+$ pip3 install -r requirements.txt
+```
+
+4. Run script
+```sh
+python3 convert.py
+```
 
 
