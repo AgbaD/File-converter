@@ -39,13 +39,15 @@ class Convert:
 			num += 1
 
 		pdf.output('{0}.pdf'.format(self.name))
+		print('File saved')
 
 	def text_to_wav(self):
 		with open(self.file) as f:
 			txt = f.read()
 
-		audio = gTTS(text=txt, lang='en', slow=Fasle)
+		audio = gTTS(text=txt, lang='en', slow=False)
 		audio.save("{0}.wav".format(self.name))
+		print('File saved')
 
 
 if __name__ == '__main__':
